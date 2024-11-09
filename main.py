@@ -4,6 +4,7 @@ from io import BytesIO
 
 app = Flask(__name__)
 
+
 @app.route('/descargar_excel')
 def descargar_excel():
     # Configuración del servidor Alwaysdata con credenciales directas
@@ -29,10 +30,12 @@ def descargar_excel():
     excel_buffer.seek(0)
     return send_file(
         excel_buffer,
-        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        mimetype=
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         as_attachment=True,
-        download_name='Lozano.xlsx'
-    )
+        download_name='Lozano.xlsx')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
